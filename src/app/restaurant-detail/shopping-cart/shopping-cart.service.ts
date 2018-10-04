@@ -12,11 +12,21 @@ export class ShoppingCartService{
       let foundItem = this.items.find((mItem)=> mItem.menuItem.id === item.id)
       if (foundItem) {
         console.log(`Adicionado exitente ${foundItem.menuItem.name} (${foundItem.quantity+1})`)
-
-        foundItem.quantity = foundItem.quantity+1
+        this.increaseQty(foundItem)
       } else {
         console.log(`Adicionado item ao carrinho ${item.name} - tamanho da lista de carrinho: ${this.items.length}`)
         this.items.push(new CartItem(item))
+      }
+    }
+
+    increaseQty(item: CartItem){
+       item.quantity = item.quantity+1
+    }
+
+    decreasyQty(item: CartItem){
+      item.quantity = item.quantity-1
+      if (item.quantity===0){
+        this.removeItem(item)
       }
     }
 
