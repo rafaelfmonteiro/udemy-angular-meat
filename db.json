@@ -370,5 +370,53 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua Felisberta F de Carvalho",
+      "number": "12345",
+      "optionalAddress": "321321",
+      "paymentOptions": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 1,
+          "menuId": "coke.png"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "angular meat",
+      "number": "12312",
+      "optionalAddress": "",
+      "paymentOptions": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Felisberta F de Carvalho",
+      "number": "123123",
+      "optionalAddress": "",
+      "paymentOptions": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cake"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
