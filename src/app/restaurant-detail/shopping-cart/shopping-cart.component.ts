@@ -15,9 +15,9 @@ export class ShoppingCartComponent implements OnInit {
 
   items(): CartItem[] {
     for (let item of this.shoppingCartService.items) {
-      console.log(item.menuItem.name);
+      //console.log(item.menuItem.name);
     }
-    console.log(`Capturando itens do carrinho de compras - ${this.shoppingCartService.items.length}`)
+    //console.log(`Capturando itens do carrinho de compras - ${this.shoppingCartService.items.length}`)
     return this.shoppingCartService.items;
   }
 
