@@ -20,7 +20,8 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.mudule';
-import {SnackbarComponent} from './shared/messages/snackbar/snackbar.component'
+import {SnackbarComponent} from './shared/messages/snackbar/snackbar.component';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {SnackbarComponent} from './shared/messages/snackbar/snackbar.component'
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
