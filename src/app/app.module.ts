@@ -5,6 +5,8 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
+import {LocationStrategy, HashLocationStrategy} from '@angular/common'
+
 import {ROUTES} from './app.routes'
 
 import { AppComponent } from './app.component';
@@ -17,7 +19,7 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
-import { RestaurantsService } from './restaurants/restaurants.service';
+//import { RestaurantsService } from './restaurants/restaurants.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.mudule';
 import {SnackbarComponent} from './shared/messages/snackbar/snackbar.component';
@@ -46,7 +48,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
     SharedModule.forRoot(),
     RouterModule.forRoot(ROUTES, {preloadingStrategy:PreloadAllModules})
   ],
-  providers: [RestaurantsService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy }, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
