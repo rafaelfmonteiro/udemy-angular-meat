@@ -2,11 +2,19 @@
 exports.__esModule = true;
 var users_1 = require("./users");
 var jwt = require("jsonwebtoken");
+<<<<<<< HEAD
+=======
+var api_config_1 = require("./api-config");
+>>>>>>> 46459edbcde68d96c822977613d1817f7672a9eb
 exports.handleAuthentication = function (req, resp) {
     var user = req.body;
     if (isValid(user)) {
         var dbUser = users_1.users[user.email];
+<<<<<<< HEAD
         var token = jwt.sign({ sub: dbUser.email, iss: 'meat-api' }, 'meat-api-password');
+=======
+        var token = jwt.sign({ sub: dbUser.email, iss: 'meat-api' }, api_config_1.apiConfig.secret);
+>>>>>>> 46459edbcde68d96c822977613d1817f7672a9eb
         resp.json({ name: dbUser.name, email: dbUser.email, acessToken: token });
     }
     else {
