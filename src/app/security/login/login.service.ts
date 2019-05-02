@@ -16,7 +16,8 @@ export class LoginService {
   }
 
   login(email: string, password: string): Observable<User> {
+    console.log(`Login: ${email} Senha: ${password} Endpoint: ${MEAT_API}/login`);
     return this.http.post<User>(`${MEAT_API}/login`, {email: email, password: password})
-    .do(user => this.user = user)
+      .do(user => this.user = user);
   }
 }

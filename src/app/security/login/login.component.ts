@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value.email,
       this.loginForm.value.password)
       .subscribe(user => this.notificationSerice.notify(`Bem vindo, ${user.name}`),
-                response=> //HttpErrorResponse
-                this.notificationSerice.notify(response.error.message))
+                response=>  this.notificationSerice.notify(response.error.message));
+                // //HttpErrorResponse
+
+                console.log('Logou: '+  this.loginService.user.accessToken );
   }
 }

@@ -9,10 +9,6 @@ export class User {
    another.password === this.password
  }
 }
-<<<<<<< HEAD
-export const users = {
-=======
 export const users: {[key:string]: User} = {
->>>>>>> 46459edbcde68d96c822977613d1817f7672a9eb
     "rafius@gmail.com" : new User('rafius@gmail.com','Rafael Monteiro','rafa')
 }

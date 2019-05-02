@@ -4,10 +4,7 @@ var jsonServer = require("json-server");
 var fs = require("fs");
 var https = require("https");
 var auth_1 = require("./auth");
-<<<<<<< HEAD
-=======
 var authz_1 = require("./authz");
->>>>>>> 46459edbcde68d96c822977613d1817f7672a9eb
 var server = jsonServer.create();
 var router = jsonServer.router('db.json');
 var middlewares = jsonServer.defaults();
@@ -16,10 +13,7 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 //middlewares para login
 server.post('/login', auth_1.handleAuthentication);
-<<<<<<< HEAD
-=======
 server.use('/orders', authz_1.handleAuthorization);
->>>>>>> 46459edbcde68d96c822977613d1817f7672a9eb
 // Use default router
 server.use(router);
 var options = {
