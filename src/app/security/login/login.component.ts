@@ -12,7 +12,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup
-  navigateTo: string 
+  navigateTo: string
 
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       email: this.fb.control('',[Validators.required, Validators.email ] ),
       password: this.fb.control('',[Validators.required])
     })
-    this.navigateTo = this.activatedRoute.snapshot.params['to'] || '/'
+    this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/')
   }
   login(){
     this.loginService.login(this.loginForm.value.email,
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       .subscribe(user => this.notificationSerice.notify(`Bem vindo, ${user.name}`),
                 response=>  this.notificationSerice.notify(response.error.message),
                 () => {
-                  this.router.navigate([this.navigateTo])
+                  this.router.navigate([atob(this.navigateTo)])
                 });
                 // //HttpErrorResponse
 

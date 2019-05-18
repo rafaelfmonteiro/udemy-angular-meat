@@ -27,5 +27,6 @@ function extractToken(req) {
             token = parts[1];
         }
     }
+    console.log('Token recebid: ' + token);
     return token;
 }

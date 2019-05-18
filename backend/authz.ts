@@ -26,5 +26,6 @@ function extractToken(req: Request) : string {
       token = parts[1]
     }
   }
+  console.log('Token recebid: '+token)
   return token
 }
